@@ -7,6 +7,8 @@ import "@stream-io/video-react-sdk/dist/css/styles.css";
 
 import "react-datepicker/dist/react-datepicker.css";
 
+import { Analytics } from "@vercel/analytics/react";
+
 import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,7 +31,7 @@ export default function RootLayout({
 			<ClerkProvider
 				appearance={{
 					layout: {
-						logoImageUrl: "/icons/logo_new.svg",
+						logoImageUrl: "/icons/logo_title.svg",
 						socialButtonsVariant: "iconButton",
 					},
 					variables: {
@@ -44,6 +46,7 @@ export default function RootLayout({
 				<body className={`${inter.className} bg-dark-2`}>
 					{children}
 					<Toaster />
+					<Analytics />
 				</body>
 			</ClerkProvider>
 		</html>
